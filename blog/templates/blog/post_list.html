@@ -13,17 +13,12 @@
         <div>
             <h1><a href="/">Usui's Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 08.05.2024, 10:49</p>
-            <h2><a href="/">My first post</a></h2>
-            <p>こんにちは、よろしくお願いいたします。</p>
-        </div>
-
-        <div>
-            <p>公開日： 2024/05/08, 10:49</p>
-            <h2><a href="">2番目の投稿</a></h2>
-            <p>こんにちは、よろしくお願いいたします。</p>
-        </div>
+        {% for post in posts%}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
